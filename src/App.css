@@ -1,0 +1,54 @@
+@media screen and (max-width: 400px) {
+  #features {
+    padding: 20px;
+    width: 111%;
+  }
+  #about,
+  #services,
+  #testimonials,
+  #team,
+  #contact,
+  #footer {
+    width: 111%;
+  }
+
+  #portfolio {
+    width: 110%;
+  }
+}
+/* Dropdown Menu Styling */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.nav-item.dropdown .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item.dropdown .dropdown-toggle i {
+  margin-left: 8px;  /* Space between text and arrow */
+}
+
+.nav-item.dropdown .dropdown-menu {
+  border-radius: 0.375rem; /* Rounded corners for the dropdown */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Dropdown Item Hover Effect */
+.nav-item .dropdown-menu .dropdown-item:hover {
+  background-color: #007bff; /* Change background on hover */
+  color: white; /* Change text color */
+}
+
+.nav-item .dropdown-item {
+  padding: 10px 20px;  /* Increase padding for easier clicking */
+}
+
+/* Make the dropdown more accessible and mobile-friendly */
+@media (max-width: 768px) {
+  .nav-item.dropdown .dropdown-menu {
+    position: static; /* Make the dropdown open below the link on mobile */
+    box-shadow: none; /* Remove shadow on smaller screens */
+  }
+}

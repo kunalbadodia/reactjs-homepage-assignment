@@ -1,0 +1,743 @@
+/* Top Bar Styling */
+.top-bar {
+  position: fixed; /* Fix the top bar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1C4670; /* Background color */
+  color: #fff; /* Text color */
+  padding: 5px 20px; /* Reduced padding for smaller top bar */
+  z-index: 1030; /* Ensure it's above other elements */
+  font-size: 12px; /* Smaller font size */
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  width: 100%; /* Make sure the container spans the entire width */
+}
+
+.contact-info {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  gap: 12px; /* Reduced space between items */
+}
+
+.contact-info span {
+  margin-left: 5px;
+}
+
+.contact-info svg {
+  font-size: 12px; /* Smaller icon size */
+}
+
+/* Mobile View - Hide Top Bar Contents */
+@media (max-width: 767px) {
+  .top-bar .container {
+    display: none; /* Hide the top bar contents on small devices */
+  }
+}
+
+
+/* Navbar Styles */
+.navbar {
+  background-color: #ffffff;
+  border-top: 4px solid #1C4670; /* Blue border on top */
+  padding: 4px 15px; /* Reduced padding for smaller navbar */
+  position: fixed; /* Keep the navbar fixed */
+  top: 50px; /* Starts just below the top bar */
+  width: 100%;
+  z-index: 1020; /* Ensure it's above other elements */
+}
+
+.navbar-nav {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.navbar-nav > li {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.navbar-nav > li > a {
+  color: #000000;
+  text-decoration: none;
+  padding: 8px 12px; /* Reduced padding for smaller buttons */
+  font-size: 12px; /* Smaller font size */
+}
+
+/* Specific Styles for the "Our Services" Dropdown */
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  z-index: 999;
+}
+
+/* Show the dropdown menu when hovering over "Our Services" */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-nav .dropdown-menu a {
+  color: #333;
+  padding: 8px 12px; /* Smaller padding for dropdown items */
+  display: block;
+  text-decoration: none;
+}
+
+.navbar-nav .dropdown-menu a:hover {
+  background-color: #f8f8f8;
+}
+
+/* Mobile View - Navbar should be stacked vertically */
+@media (max-width: 767px) {
+  .navbar-nav {
+    display: block; /* Ensure the navbar items are stacked vertically */
+  }
+
+  .navbar-nav > li {
+    display: block; /* Each item will be displayed on its own line */
+    margin-right: 0;
+    padding: 8px 0; /* Space out the links */
+  }
+
+  .navbar-nav .dropdown-menu {
+    position: static; /* Make the dropdowns appear below the parent item */
+    float: none;
+    display: none; /* Hide the dropdown menu by default */
+    background-color: #ffffff;
+    border: none;
+  }
+
+  /* When dropdown is open, display the menu below the parent item */
+  .navbar-nav .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .navbar-nav .dropdown-toggle {
+    display: block; /* Ensure the dropdown toggle is displayed */
+  }
+
+  .navbar-nav .dropdown-menu a {
+    padding: 8px 12px; /* Smaller padding for dropdown items */
+    display: block;
+  }
+}
+
+
+/* Flexbox for Contact Info */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+  align-items: center;
+  justify-content: space-between; /* Space between groups */
+  gap: 15px;
+}
+
+/* Individual Info Items */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Gradient Divider */
+.gradient-divider {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 20%,
+    #fff 50%,
+    transparent 80%,
+    transparent 100%
+  );
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px; /* Space between icons */
+}
+
+.social-icon {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #f0a500; /* Hover color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align content */
+    gap: 10px;
+  }
+
+  .gradient-divider {
+    display: none; /* Hide divider on small screens */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Logo Image Styling */
+.navbar-brand img {
+  max-height: 20px; /* Adjust to your preferred size for larger screens */
+  width: auto;
+  transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+/* Navbar Header Styling */
+.navbar-header {
+  display: flex;
+  left: -70px;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
+}
+
+/* Media Query for Tablets and Smaller Screens (Below 768px) */
+@media (max-width: 768px) {
+  /* Reduce logo size for tablet screens */
+  .navbar-brand img {
+    max-height: 30px; /* Smaller size for tablet */
+  }
+
+  /* Navbar Header Adjustment */
+  .navbar-header {
+    justify-content: flex-start; /* Align logo to the left */
+    padding-left: 10px; /* Optional: Add some space on the left */
+  }
+}
+
+/* Media Query for Mobile Screens (Below 480px) */
+@media (max-width: 480px) {
+  /* Further reduce logo size for mobile screens */
+  .navbar-brand img {
+    max-height: 60px !important; /* Even smaller size for mobile */
+  }
+
+  /* Navbar Header Adjustment */
+  .navbar-header {
+    justify-content: flex-start; /* Align logo to the left */
+    padding-left: 80px !important; /* Less padding for more space */
+  }
+  
+  /* Adjust navbar brand container for better mobile view */
+  .navbar-header .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align logo left */
+    padding: 5px; /* Optional: Add some spacing around */
+  }
+}
+
+/* Style for the Christmas Hat */
+.christmas-hat {
+  position: absolute;
+  top: -2px; /* Adjust to move the hat slightly above the logo */
+  left: -5px; /* Adjust to position it to the left of the logo */
+  height: 40px; /* Adjust the size of the hat */
+  
+  transform: rotate(-15deg); /* Slightly tilt the hat */
+  z-index: 12; /* Ensure it appears above the logo */
+}
+/* Logo and Christmas Hat Positioning */
+.navbar-brand {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.navbar-brand img {
+  max-height: 50px; /* Default logo size */
+  width: auto;
+}
+
+.christmas-hat {
+  position: absolute;
+  top: -2px; /* Adjust the hat's position slightly above the logo */
+  left: -8px; /* Fine-tune for better alignment */
+  height: 40px; /* Default size of the hat */
+  transform: rotate(-15deg); /* Tilt the hat */
+  z-index: 12; /* Ensure the hat appears above the logo */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 30px; /* Reduce logo size on small screens */
+  }
+  
+  .christmas-hat {
+    height: 30px; /* Adjust hat size for smaller screens */
+    top: -8px; /* Slightly adjust hat position */
+    left: -5px; /* Adjust for smaller screen alignment */
+    transform: rotate(-10deg); /* Reduce the tilt on small screens */
+  }
+}
+
+/* For even smaller screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+  .navbar-brand img {
+    max-height: 600%; /* Reduce logo size further */
+  }
+  
+  .christmas-hat {
+    height: 32px; /* Further reduce hat size */
+    top: -5px; /* Reset hat position */
+    left: -10px; /* Fine-tune alignment */
+    transform: rotate(-5deg); /* Slightly reduce tilt */
+  }
+}
+/* Talk an Expert Button */
+a.talk-expert-btn {
+  display: inline-block !important;
+  padding: 10px 15px !important;
+  margin-left: 15px !important;
+  right: -80px !important;
+  border: 2px solid rgba(255, 162, 41, 1) !important;
+  border-radius: 6px !important;
+  background-color: rgba(255, 162, 41, 1) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important; /* Ensure no shadow effect */
+}
+
+a.talk-expert-btn:hover {
+  background-color: #1C4670 !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 162, 41, 1) !important;
+  text-decoration: none !important; /* Remove underline */
+  box-shadow: none !important; /* Prevent shadow effect on hover */
+}
+
+/* Remove any pseudo-element like ::after */
+a.talk-expert-btn::after {
+  content: none !important;
+}
+
+
+/* Full image section */
+.full-image {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  overflow: hidden; /* Prevents background from scrolling */
+  margin-top: 140px; /* Adjust this value to match your navbar height */
+}
+
+/* Image styling */
+.full-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the full container without distortion */
+  object-position: center; /* Centers the image */
+  position: absolute;
+  top: 0; /* Start the image at the top of the section */
+  left: 0;
+  z-index: -1; /* Sends the image to the back */
+  background-attachment: fixed; /* Fixes the background image */
+}
+
+/* Scrollable content above the image */
+.scrollable-content {
+  position: relative;
+  z-index: 1; /* Content appears above the image */
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  margin-top: 80px; /* Ensure content is below the navbar */
+  overflow-y: auto; /* Allows scrolling within the content */
+}
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .full-image img {
+    height: auto;
+  }
+
+  .scrollable-content {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+/* For smaller tablets and below */
+@media (max-width: 768px) {
+  .full-image img {
+    height: 60%; /* Adjust image height for smaller screens */
+    object-position: center; /* Center the image */
+  }
+
+  .scrollable-content {
+    font-size: 18px;
+    margin-top: 50px; /* Adjust space below navbar */
+    padding: 10px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .full-image img {
+    height: 50%; /* Reduce image height for mobile */
+    object-position: center;
+  }
+
+  .scrollable-content {
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 30px; /* Adjust space below navbar */
+  }
+}
+
+
+/* Content Overlay Section */
+.content-left {
+  position: absolute; /* Position relative to the parent container */
+  top: 40px; /* Adjust to place content below the navbar */
+  left: 50px; /* Add some margin from the left edge */
+  z-index: 2; /* Ensure content is above the background image */
+  color: #000000; /* Text color for visibility */
+  max-width: 400px; /* Optional: Limit content width */
+ 
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 8px; /* Optional: Rounded corners */
+  font-size: 16px;
+}
+
+.content-left h1 {
+  font-size: 28px; /* Heading font size */
+  margin-bottom: 15px;
+}
+.content-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the image and the text */
+}
+
+.bstar-image {
+  height: 30% !important; /* Matches the text height dynamically */
+  width: 10% !important; /* Keeps the image aspect ratio */
+  margin-right: 5px; /* Optional: Add spacing between the image and text */
+  top: 20px !important;
+  left: 0px !important;
+}
+.bstar-img {
+  height: 28% !important; /* Matches the text height dynamically */
+  width: 50% !important; /* Keeps the image aspect ratio */
+  margin-right: 5px; /* Optional: Add spacing between the image and text */
+  top: 22px !important;
+  left: 156px !important;
+}
+
+
+h5 {
+  font-size: 1em; /* Adjust size as needed */
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.full-image {
+  position: relative;
+  text-align: center;
+  color: white; /* Default color for text over the background */
+}
+
+.trusted-partner-container {
+  position: absolute;
+  top: 50%; /* Adjust the vertical alignment */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000000; /* White text color */
+}
+
+.trusted-partner-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px !important; /* Large font size for the title */
+  font-weight: bold;
+  margin-top: 40px;
+  white-space: nowrap;
+  position: absolute;
+  left: -80px;
+}
+
+.trusted-partner-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #000000;
+  margin-top: 110px;
+  white-space: nowrap; /* Prevent the text from wrapping to the next line */
+  position: absolute;
+  left: -80px;
+}
+@media (max-width: 768px) {
+  .content-left {
+    top: 180px; /* Adjust content position for smaller screens */
+    left: 20px; /* Reduce the left margin */
+    padding: 15px; /* Reduce padding for smaller screens */
+    font-size: 14px; /* Smaller font size */
+    max-width: 90%; /* Allow content to take up more space on smaller screens */
+  }
+
+  .content-left h1 {
+    font-size: 24px; /* Reduce font size for headings */
+    margin-bottom: 12px; /* Adjust the margin */
+  }
+
+  .bstar-image, .bstar-img {
+    height: 20% !important; /* Reduce star image size */
+    width: 20% !important; /* Adjust width of the stars for smaller screens */
+  }
+  
+  /* Adjust trusted partner container for smaller devices */
+  .trusted-partner-container {
+    top: 45%; /* Adjust vertical alignment */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .trusted-partner-title {
+    font-size: 36px !important; /* Reduce font size for smaller devices */
+    position: absolute;
+    left: -40px; /* Adjust the position */
+  }
+
+  .trusted-partner-subtitle {
+    font-size: 200%; /* Adjust font size for the subtitle */
+    position: absolute;
+    left: -40px; /* Adjust the position */
+  }
+}
+@media (max-width: 480px) {
+  .content-left {
+    top: 100px; /* Further adjust content position */
+    left: 10px; /* Further reduce the left margin */
+    padding: 10px; /* Smaller padding */
+    font-size: 12px; /* Even smaller font size */
+    max-width: 100%; /* Make content take up full width */
+  }
+
+  .content-left h1 {
+    font-size: 20px; /* Further reduce heading font size */
+    margin-bottom: 8px; /* Adjust margin */
+  }
+
+  .bstar-image, .bstar-img {
+    height: 15% !important; /* Even smaller star image size */
+    width: 15% !important; /* Adjust width for small screens */
+  }
+
+  .trusted-partner-title {
+    font-size: 40px !important; /* Further reduce title size */
+    position: absolute;
+    top: -130px !important;
+    left: -10px; /* Adjust title position */
+  }
+
+  .trusted-partner-subtitle {
+    font-size: 18px !important; /* Further reduce subtitle size */
+    position: absolute;
+    top: -100px;
+    left: -10px; /* Adjust subtitle position */
+  }}
+/* For small screens (phones and below) */
+@media (max-width: 768px) {
+  .google-rating {
+    display: none; /* Hide the entire Google rating section */
+  }
+}.compliance-platform {
+  position: absolute;
+  top: 40%; /* Align vertically to the center */
+  left: 2.5%; /* Align horizontally to the left side */
+  transform: translateY(-50%); /* Center vertically */
+  padding: 20px;
+  
+  color: #353333; /* Text color */
+  max-width: 400px; /* Limit the width */
+  font-size: 16px;
+  border-radius: 8px; /* Optional: Rounded corners */
+  text-align: left; /* Align text to the left */
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: normal; /* Allow text to wrap on smaller screens */
+}
+
+.compliance-platform p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 20px !important;
+  white-space: nowrap; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .compliance-platform {
+    top: 40%; /* Adjust vertical position for smaller screens */
+    left: 5%; /* Adjust horizontal alignment */
+    max-width: 90%; /* Allow more width on small screens */
+    font-size: 14px; /* Smaller font size */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .compliance-platform p {
+    font-size: 20px; /* Smaller font size for paragraph */
+  }
+}
+
+/* Mobile View Adjustment for .compliance-platform */
+@media (max-width: 480px) {
+  .compliance-platform {
+   display: none;
+  }
+}
+
+
+
+
+
+  .compliance-platform p {
+    font-size: 14px; /* Smaller font size for paragraph */
+    max-width: 20% !important;
+  }
+
+
+/* Bottom Talk an Expert Button */
+.talk-expert-btn-bottom {
+  display: inline-block !important;
+  padding: 12px 24px !important;
+  border: 2px solid #1C4670 !important;
+  border-radius: 6px !important;
+  background-color: #1C4670 !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important; /* Ensure no shadow effect */
+  position: fixed; /* Fix position on the page */
+  bottom: 120px; /* 20px from the bottom */
+  left: 60px; /* 20px from the left */
+  z-index: 9999; /* Make sure it stays on top of other content */
+}
+
+a.talk-expert-btn-bottom:hover {
+  background-color: rgba(255, 162, 41, 1) !important;
+  color: #ffffff !important;
+  border: 2px solid #1C4670 !important;
+  text-decoration: none !important; /* Remove underline */
+  box-shadow: none !important; /* Prevent shadow effect on hover */
+}
+
+/* Remove any pseudo-element like ::after */
+a.talk-expert-btn-bottom::after {
+  content: none !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .talk-expert-btn-bottom {
+    bottom: 50px; /* Move the button slightly higher on tablets */
+    left: 20px; /* Reduce the distance from the left side */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Reduce font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .talk-expert-btn-bottom {
+    bottom: 200px; /* Move the button higher on mobile */
+    left: 32%; /* Further reduce the distance from the left */
+    padding: 8px 16px; /* Adjust padding for mobile screens */
+    font-size: 11px; /* Further reduce font size for mobile */
+  }
+}
+
+/* Base Styles for .data-img */
+.data-img {
+  width: 35% !important;  /* Set the width percentage */
+  height: auto !important; /* Maintain aspect ratio based on width */
+  margin-right: 5px; /* Optional: Add spacing between the image and text */
+  position: absolute; /* To keep it positioned correctly */
+  top: 52% !important; /* Vertical alignment */
+  left: 21% !important; /* Horizontal alignment */
+  transform: translate(-50%, -50%); /* Center the image */
+}
+
+/* Responsive Styles - Hide .data-img on smaller devices */
+@media (max-width: 768px) {
+  .data-img {
+    size: 30px !important;/* Hide the image on tablets and smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .data-img {
+    display: none !important; /* Hide the image on mobile devices */
+  }
+}
+.video-img {
+  width: 18% !important;  /* Set the width percentage */
+  height: auto !important; /* Maintain aspect ratio based on width */
+  margin-right: 5px; /* Optional: Add spacing between the image and text */
+  position: absolute; /* To keep it positioned correctly */
+  top: 63% !important; /* Vertical alignment */
+  left: 18% !important; /* Horizontal alignment */
+  transition: all 0.3s ease !important;
+  position: relative; /* Make it positionable for z-index */
+  z-index: 2;
+
+}
+.video-img:hover {
+  cursor: pointer !important; /* Change cursor on hover */
+  transform: scale(1.1); /* Optional: Slight zoom effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the zoom effect */
+}
+
+
+
+@media (max-width: 1000px) {
+  .video-img {
+    top: 46% !important; /* Vertical alignment */
+    left: 30% !important; /* Hide the image on mobile devices */
+    width: 55% !important;  /* Set the width percentage */
+    height: auto !important; /* Maintain aspect ratio based on width */
+
+  }
+}
+.content-wrapper {
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+   /* Align text to the center */
+  margin-top: 20px !important; /* Space below the navbar */
+}
