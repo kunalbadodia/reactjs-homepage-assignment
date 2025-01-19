@@ -1,9 +1,9 @@
-# react js assignment
+![desktop](https://github.com/user-attachments/assets/a036bddb-c22d-4839-989d-3959432d0614)# react js assignment
 
 **
 
 # this is my responsive completed assignment  
-
+this is the live vercel url of the assignment - https://reactjs-homepage-assignment-2c1ovcqc5-kunalbadodias-projects.vercel.app/
 **
 
 
